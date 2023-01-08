@@ -1,0 +1,29 @@
+{
+	"Angles": [{
+		"Week": "202212W3",
+		"Show": "AEW Dynamite",
+		"TypeAngle": "Freestyle Angle",
+		"SuggestedName": "The strong of the champ",
+		"ExpectedMinutes": 4,
+		"Workers": [{
+			"W1": "Samoa Joe",
+			"S1": true,
+			"RO1": "RateOnFighting",
+			"SL1": "Major Success",
+			"AP1": "On"
+		}, {
+			"W2": "Konosuke Takeshita",
+			"S2": true,
+			"RO2": "RateOnCharisma",
+			"SL2": "Neutral",
+			"AP2": "Off"
+		},{
+			"W3": "Sting",
+			"S3": true,
+			"RO3": "RateOnMicrophone",
+			"SL3": "Neutral",
+			"AP3": "On"
+		}]
+	}]
+	
+}

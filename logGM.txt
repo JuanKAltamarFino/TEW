@@ -1,0 +1,675 @@
+Proporcion M: 0.7763157894736842
+Proporcion F: 0.2236842105263158
+Male
+p1,p2,p3:
+(39.1025793650794, 49.4071428571429, 73.8670634920635)
+Brand	None
+p1,p2,p3:
+(39.1025793650794, 49.4071428571429, 73.8670634920635)
+Female
+p1,p2,p3:
+(36.635119047619035, 44.98789682539683, 58.7674603174603)
+Brand	None
+p1,p2,p3:
+(36.635119047619035, 44.98789682539683, 58.7674603174603)
+Tag
+p1,p2,p3:
+(40.54540343915347, 47.099867724867714, 73.49771825396824)
+Brand	None
+p1,p2,p3:
+(40.54540343915347, 47.099867724867714, 73.49771825396824)
+p1,p2,p3:
+(37.10717592592595, 43.17569444444442, 54.76001984126985)
+Brand	None
+p1,p2,p3:
+(37.10717592592595, 43.17569444444442, 54.76001984126985)
+p1,p2,p3:
+(36.63511904761899, 44.98789682539679, 58.7674603174603)
+Brand	None
+p1,p2,p3:
+(36.63511904761899, 44.98789682539679, 58.7674603174603)
+p1,p2,p3:
+(39.27539682539681, 46.21028439153439, 73.49771825396824)
+Brand	None
+p1,p2,p3:
+(39.27539682539681, 46.21028439153439, 73.49771825396824)
+p1,p2,p3:
+(38.7998015873016, 48.560515873015895, 73.8670634920635)
+Brand	None
+p1,p2,p3:
+(38.7998015873016, 48.560515873015895, 73.8670634920635)
+dict_division
+{'Single': {'Male': {'None': {'DarkCard': 39.1025793650794, 'MidCard': 49.4071428571429, 'MainCard': 73.8670634920635}}, 'Female': {'None': {'DarkCard': 36.635119047619035, 'MidCard': 44.98789682539683, 'MainCard': 58.7674603174603}}, 'All': {'None': {'DarkCard': 38.7998015873016, 'MidCard': 48.560515873015895, 'MainCard': 73.8670634920635}}}, 'Tag': {'Male': {'None': {'DarkCard': 40.54540343915347, 'MidCard': 47.099867724867714, 'MainCard': 73.49771825396824}}, 'Female': {'None': {'DarkCard': 37.10717592592595, 'MidCard': 43.17569444444442, 'MainCard': 54.76001984126985}}, 'Mix': {'None': {'DarkCard': 36.63511904761899, 'MidCard': 44.98789682539679, 'MainCard': 58.7674603174603}}, 'All': {'None': {'DarkCard': 39.27539682539681, 'MidCard': 46.21028439153439, 'MainCard': 73.49771825396824}}}, 'Trios': {}, 'Male': {'None': {'DarkCard': 39.1025793650794, 'MidCard': 49.4071428571429, 'MainCard': 73.8670634920635}}, 'Female': {'None': {'DarkCard': 36.635119047619035, 'MidCard': 44.98789682539683, 'MainCard': 58.7674603174603}}, 'Mix': {'None': {'DarkCard': 36.63511904761899, 'MidCard': 44.98789682539679, 'MainCard': 58.7674603174603}}, 'All': {'None': {'DarkCard': 38.7998015873016, 'MidCard': 48.560515873015895, 'MainCard': 73.8670634920635}}}
+printTypeAndContent
+<class 'int'>
+118
+cant:37_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    39.102579
+Name: 0, dtype: object
+cant:36_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity    39.102579
+MaxPopularity    49.407143
+Name: 1, dtype: object
+cant:36_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity    49.407143
+MaxPopularity    73.867063
+Name: 2, dtype: object
+cant:10_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    36.635119
+Name: 3, dtype: object
+cant:10_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity    36.635119
+MaxPopularity    44.987897
+Name: 4, dtype: object
+cant:10_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity    44.987897
+MaxPopularity     58.76746
+Name: 5, dtype: object
+cant:47_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    38.799802
+Name: 6, dtype: object
+cant:45_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity    38.799802
+MaxPopularity    48.560516
+Name: 7, dtype: object
+cant:47_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity    48.560516
+MaxPopularity    73.867063
+Name: 8, dtype: object
+cant:1965_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    40.545403
+Name: 9, dtype: object
+cant:1965_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity    40.545403
+MaxPopularity    47.099868
+Name: 10, dtype: object
+cant:1965_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity    47.099868
+MaxPopularity    73.497718
+Name: 11, dtype: object
+cant:146_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    37.107176
+Name: 12, dtype: object
+cant:145_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity    37.107176
+MaxPopularity    43.175694
+Name: 13, dtype: object
+cant:146_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity    43.175694
+MaxPopularity     54.76002
+Name: 14, dtype: object
+cant:1090_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    36.635119
+Name: 15, dtype: object
+cant:1090_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity    36.635119
+MaxPopularity    44.987897
+Name: 16, dtype: object
+cant:1090_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity    44.987897
+MaxPopularity     58.76746
+Name: 17, dtype: object
+cant:3201_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    39.275397
+Name: 18, dtype: object
+cant:3200_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity    39.275397
+MaxPopularity    46.210284
+Name: 19, dtype: object
+cant:3201_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity    46.210284
+MaxPopularity    73.497718
+Name: 20, dtype: object
+df_roster_divition
+    Divition  Cant  MinPopularity  MaxPopularity    Type  Gender Brand
+0   DarkCard    37       0.000000      39.102579  Single    Male  None
+1    MidCard    36      39.102579      49.407143  Single    Male  None
+2   MainCard    36      49.407143      73.867063  Single    Male  None
+3   DarkCard    10       0.000000      36.635119  Single  Female  None
+4    MidCard    10      36.635119      44.987897  Single  Female  None
+5   MainCard    10      44.987897      58.767460  Single  Female  None
+6   DarkCard    47       0.000000      38.799802  Single     All  None
+7    MidCard    45      38.799802      48.560516  Single     All  None
+8   MainCard    47      48.560516      73.867063  Single     All  None
+9   DarkCard  1965       0.000000      40.545403     Tag    Male  None
+10   MidCard  1965      40.545403      47.099868     Tag    Male  None
+11  MainCard  1965      47.099868      73.497718     Tag    Male  None
+12  DarkCard   146       0.000000      37.107176     Tag  Female  None
+13   MidCard   145      37.107176      43.175694     Tag  Female  None
+14  MainCard   146      43.175694      54.760020     Tag  Female  None
+15  DarkCard  1090       0.000000      36.635119     Tag     Mix  None
+16   MidCard  1090      36.635119      44.987897     Tag     Mix  None
+17  MainCard  1090      44.987897      58.767460     Tag     Mix  None
+18  DarkCard  3201       0.000000      39.275397     Tag     All  None
+19   MidCard  3200      39.275397      46.210284     Tag     All  None
+20  MainCard  3201      46.210284      73.497718     Tag     All  None
+df_shows
+0    AEW Dark: Elevation
+1               AEW Dark
+2            AEW Rampage
+3           AEW Dynamite
+Name: Show, dtype: object
+cant:31_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    39.102579
+Name: 0, dtype: object
+cant:31_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity    39.102579
+MaxPopularity    49.407143
+Name: 1, dtype: object
+cant:35_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender                Male
+Brand                 None
+MinPopularity    49.407143
+MaxPopularity    73.867063
+Name: 2, dtype: object
+cant:6_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    36.635119
+Name: 3, dtype: object
+cant:10_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity    36.635119
+MaxPopularity    44.987897
+Name: 4, dtype: object
+cant:9_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender              Female
+Brand                 None
+MinPopularity    44.987897
+MaxPopularity     58.76746
+Name: 5, dtype: object
+cant:37_Type:Single
+data:Divition          DarkCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    38.799802
+Name: 6, dtype: object
+cant:40_Type:Single
+data:Divition           MidCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity    38.799802
+MaxPopularity    48.560516
+Name: 7, dtype: object
+cant:45_Type:Single
+data:Divition          MainCard
+Type                Single
+Gender                 All
+Brand                 None
+MinPopularity    48.560516
+MaxPopularity    73.867063
+Name: 8, dtype: object
+cant:1381_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    40.545403
+Name: 9, dtype: object
+cant:1563_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity    40.545403
+MaxPopularity    47.099868
+Name: 10, dtype: object
+cant:1721_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                Male
+Brand                 None
+MinPopularity    47.099868
+MaxPopularity    73.497718
+Name: 11, dtype: object
+cant:73_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    37.107176
+Name: 12, dtype: object
+cant:101_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity    37.107176
+MaxPopularity    43.175694
+Name: 13, dtype: object
+cant:128_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender              Female
+Brand                 None
+MinPopularity    43.175694
+MaxPopularity     54.76002
+Name: 14, dtype: object
+cant:582_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    36.635119
+Name: 15, dtype: object
+cant:970_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity    36.635119
+MaxPopularity    44.987897
+Name: 16, dtype: object
+cant:873_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                 Mix
+Brand                 None
+MinPopularity    44.987897
+MaxPopularity     58.76746
+Name: 17, dtype: object
+cant:2075_Type:Tag
+data:Divition          DarkCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity          0.0
+MaxPopularity    39.275397
+Name: 18, dtype: object
+cant:2520_Type:Tag
+data:Divition           MidCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity    39.275397
+MaxPopularity    46.210284
+Name: 19, dtype: object
+cant:2797_Type:Tag
+data:Divition          MainCard
+Type                   Tag
+Gender                 All
+Brand                 None
+MinPopularity    46.210284
+MaxPopularity    73.497718
+Name: 20, dtype: object
+df_shows
+0    AEW Dark: Elevation
+1               AEW Dark
+2            AEW Rampage
+3           AEW Dynamite
+Name: Show, dtype: object
+printTypeAndContent
+<class 'pandas.core.frame.DataFrame'>
+                TV Show  Divition    Type  Gender IntProportion
+0   AEW Dark: Elevation  DarkCard  Single  Female             0
+1   AEW Dark: Elevation  DarkCard  Single    Male             0
+2   AEW Dark: Elevation  DarkCard     Tag  Female             0
+3   AEW Dark: Elevation  DarkCard     Tag    Male             4
+4   AEW Dark: Elevation  DarkCard     Tag     Mix             2
+..                  ...       ...     ...     ...           ...
+79         AEW Dynamite   MidCard  Single     All             0
+80         AEW Dynamite  MainCard  Single     All             0
+81         AEW Dynamite  DarkCard     Tag     All             0
+82         AEW Dynamite   MidCard     Tag     All             0
+83         AEW Dynamite  MainCard     Tag     All             0
+
+[84 rows x 5 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+getExpectedRaiting	37.37281746031745
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+ForDark
+          WrestlerName Brand  ...    RateOnPassive      RateOnActive
+0     Mercedes Varnado  None  ...   RateOnCharisma     RateOnSelling
+1               Athena  None  ...   RateOnCharisma     RateOnSelling
+2    Mercedes Martinez  None  ...   RateOnCharisma    RateOnFighting
+3         Hikaru Shida  None  ...  RateOnSexAppeal    RateOnFighting
+4           Toni Storm  None  ...  RateOnSexAppeal    RateOnFighting
+..                 ...   ...  ...              ...               ...
+136            Boulder  None  ...     RateOnMenace    RateOnFighting
+137     Brock Anderson  None  ...   RateOnCharisma  RateOnMicrophone
+138       Zack Clayton  None  ...  RateOnSexAppeal    RateOnFighting
+140             Slim J  None  ...  RateOnSexAppeal    RateOnFighting
+142       Satnam Singh  None  ...     RateOnMenace  RateOnMicrophone
+
+[121 rows x 142 columns]
+getExpectedRaiting	34.21339285714285
+getExpectedRaiting	56.18025793650792
+getExpectedRaiting	56.16440972222221
+getExpectedRaiting	54.76001984126985
+getExpectedRaiting	42.10833333333333
+getExpectedRaiting	44.3820767195767
+getExpectedRaiting	39.28487103174605
+getExpectedRaiting	34.710714285714246
+getExpectedRaiting	53.654439484127
+getExpectedRaiting	50.70570436507935
+getExpectedRaiting	49.36071428571427
+getExpectedRaiting	45.671031746031744
+getExpectedRaiting	46.88209325396822
+getExpectedRaiting	42.36455026455027
+printTypeAndContent
+<class 'int'>
+58
