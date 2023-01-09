@@ -1,5 +1,4 @@
-*.pyc
-*.pyc
-*.pyc
 log.txt
 *.pyc
+*.pyc
+*__pychache
