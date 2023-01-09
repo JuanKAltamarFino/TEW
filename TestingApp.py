@@ -1,16 +1,29 @@
 from Utility import readDFObjectForTesting,debugging,readObjectForTesting
-from GenerateMatches import generateMatchesForShows
-from TEW_MDB import generateTagTeamsFirstTime,mergeTeams 
-from GenerateMatches import retrieveDFOnlyWrestlersNames
+from GenerateMatches import generateMatchesForShows,generateWrestlerToFight
+from TEW_MDB import generateTagTeamsFirstTime,mergeTeams,removeDuplicatesTagTeams
 import re
 def main():
+	#testMergeTeams()
+	
+	
+def testRemoveDuplicatesTagTeams():
+	db_teamsP=readDFObjectForTesting("db_teamsP")
+	db_teamsP_=removeDuplicatesTagTeams(db_teamsP)
+	print(db_teamsP.shape)
+	print(db_teamsP_.shape)
+def testGenerateWrestlerToFight():
+	db_wrestlers=readDFObjectForTesting("db_wrestlers")
+	str_type_match=readObjectForTesting("str_type_match")
+	df_rosterDivition=readDFObjectForTesting("df_rosterDivition")
+	is_shuffle=readObjectForTesting("is_shuffle")
+	dict_matches=readObjectForTesting("dict_matches")
+	generateWrestlerToFight(db_wrestlers,str_type_match,df_rosterDivition,is_shuffle,dict_matches)
+def testMergeTeams():
 	db_teamsP=readDFObjectForTesting("db_teamsP")
 	print(db_teamsP.shape)
 	db_teamsAEW=readDFObjectForTesting("db_teamsAEW")
 	print(db_teamsAEW.shape)
 	print(db_teamsP.shape==db_teamsAEW.shape)
-	db_teamsP_nm=retrieveDFOnlyWrestlersNames(db_teamsP)
-	db_teamsAEW_nm=retrieveDFOnlyWrestlersNames(db_teamsAEW)
 	db_teamsP=mergeTeams(db_teamsP,db_teamsAEW)
 	print(db_teamsP.shape)
 def testGenerateTagTeamsFirstTime():

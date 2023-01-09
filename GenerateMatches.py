@@ -937,9 +937,9 @@ def generateWrestlerToFight(db_wrestlers,str_type_match,df_rosterDivition,is_shu
 				df_wrestlers_selected=df_wrestlers_selected.append(df_head, ignore_index=True)
 				df_wrestlerstoFight=df_wrestlerstoFight.drop(index=df_head.index)
 				list_nameWrestlers=getNameWrestlers(df_wrestlers_selected)
-				df_ws=retrieveDFOnlyWrestlersNames(df_wrestlerstoFight)
-				for column in df_ws.columns:
-					df_founded=df_ws.loc[df_ws[column].isin(list_nameWrestlers)]
+				lst_columns=retrieveDFOnlyWrestlersNames(df_wrestlerstoFight).columns
+				for column in lst_columns:
+					df_founded=df_wrestlerstoFight.loc[df_wrestlerstoFight[column].isin(list_nameWrestlers)]
 					if len(df_founded.values)>0:
 						df_wrestlerstoFight=df_wrestlerstoFight.drop(index=df_founded.index)
 				if df_wrestlerstoFight.empty:
@@ -1018,7 +1018,7 @@ def generateMatch(str_type_match,show,type_match,v_divition,df_wrestlerselected)
 	v_row.append(None)
 	v_row.append(None)
 	if len(df_match.columns)!=len(v_row):
-		debugging(f'{len(df_match.columns)}\n{df_match.columns}\n{len(v_row)}')
+		debugging(f'{len(df_match.columns)}\n{df_match.columns}\n{len(v_row)}\n{list_nameWrestlers}\n{df_wrestlerselected}\n{type_match}')
 	df_match.loc[len(df_match)]=v_row
 	return df_match
 def getNameWrestlers(df_wrestlerSelected):
