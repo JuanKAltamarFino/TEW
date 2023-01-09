@@ -11,6 +11,7 @@ import pytesseract
 from EnumTEW import StableColumnsTable
 from EnumTEW import MatchHistoryColumns
 from EnumTEW import TriosColumns
+from EnumTEW import RosterTypes
 from itertools import combinations
 from Utility import debugging,getLen,writeExcel,saveDFObjectForTesting,saveObjectForTesting
 from SetUp import readRouteFolderIfExist
@@ -92,11 +93,11 @@ def main():
 	saveObjectForTesting("dict_wrestling",dict_wrestling)
 	saveDFObjectForTesting("db_wrestlersP",db_wrestlersP)
 	generateTagTeamsFirstTime(dict_wrestling,db_wrestlersP)
-	db_teamsP=dict_wrestling.get('Tag')
-	saveDFObjectForTesting("./db_teamsP",db_teamsP)
-	saveDFObjectForTesting("./db_teamsAEW",db_teamsAEW)
+	db_teamsP=dict_wrestling.get(RosterTypes.TAG_TEAM.value)
+	saveDFObjectForTesting("db_teamsP",db_teamsP)
+	saveDFObjectForTesting("db_teamsAEW",db_teamsAEW)
 	db_teamsP=mergeTeams(db_teamsP,db_teamsAEW)
-	db_teamsP=put_experience(db_teamsP,db_teamsAEW)
+	#db_teamsP=put_experience(db_teamsP,db_teamsAEW)
 	db_trios=generateTriosBasedOnStables(df_stables,db_wrestlersP)
 	dict_wrestling.update({"Tag":db_teamsP})
 	dict_wrestling.update({"Single":db_wrestlersP})
@@ -612,7 +613,21 @@ def mergeTeams(db_teamsP,db_teamsAEW):
 	df_copy['Gender']=None
 	df_copy['Brand']=None
 	df_copy=df_copy[v_columns]
-	db_teamsP=pd.merge(df_copy,db_teamsP,on=list(v_columns),  how='outer')
+	#Sync the types of each columns
+	for index, value in db_teamsP.dtypes.items():
+		df_copy[index]=df_copy[index].astype(value)
+	for index,data in df_copy.iterrows():
+		df_found=db_teamsP.loc[((db_teamsP['W1']==data['W1'])&(db_teamsP['W2']==data['W2']))|((db_teamsP['W2']==data['W1'])&(db_teamsP['W1']==data['W2']))]
+		len_found=getLen(df_found)
+		if len_found==0:
+			pd.concat([db_teamsP, data], ignore_index=True)
+		else:
+			if len_found>1:
+				df_found=df_found.drop(index=df_found.head(len_found-1).index)
+			df_found['EXP']=data['EXP']
+			df_found['Tag Name']=data['Tag Name']
+			df_found['Type']=data['Type']
+	#db_teamsP=pd.merge(df_copy,db_teamsP,on=list(v_columns),  how='outer')
 	return db_teamsP
 def put_experience(db_teamsP,db_teamsAEW):
 	db_teamsAEW.Worker1=db_teamsAEW.Worker1.astype(float)
@@ -648,12 +663,22 @@ def changeColumnsPosition(df):
 	p_list = list(filter(lambda x: v_columns[x] == 'Perception', range(len_columns)))
 	pop_list = list(filter(lambda x: v_columns[x] == 'BestRating', range(len_columns)))
 	uid_list = list(filter(lambda x: v_columns[x] == 'UID', range(len_columns)))
-	if(getLen(wn_list)>0):
+	
+	prof_list = list(filter(lambda x: v_columns[x] == 'Profile', range(len_columns)))
+	nm_list = list(filter(lambda x: v_columns[x] == 'Name', range(len_columns)))
+	rop_list = list(filter(lambda x: v_columns[x] == 'RateOnPassive', range(len_columns)))
+	roa_list = list(filter(lambda x: v_columns[x] == 'RateOnActive', range(len_columns)))
+	
+	gender_list = list(filter(lambda x: v_columns[x] == 'Gender', range(len_columns)))
+	user_list = list(filter(lambda x: v_columns[x] == 'User', range(len_columns)))
+	if(getLen(wn_list)>0):#Because ChildCompanyWrestlers
 		v_columns[p_list[0]], v_columns[wn_list[0]] = v_columns[wn_list[0]], v_columns[p_list[0]]
 	v_columns[uid_list[0]], v_columns[pop_list[0]] = v_columns[pop_list[0]], v_columns[uid_list[0]]
-	print(v_columns[5])
+	if (getLen(rop_list)>0):#Because ChildCompanyWrestlers
+		v_columns[prof_list[0]], v_columns[rop_list[0]] = v_columns[rop_list[0]], v_columns[prof_list[0]]
+		v_columns[nm_list[0]], v_columns[roa_list[0]] = v_columns[roa_list[0]], v_columns[nm_list[0]]
+		v_columns[gender_list[0]], v_columns[user_list[0]] = v_columns[user_list[0]], v_columns[gender_list[0]]
 	df=df[v_columns]
-	print(df[v_columns[5]])
 	return df
 def consultChildCompanyWrestlersToFollow(cur,db):
     SQL = """

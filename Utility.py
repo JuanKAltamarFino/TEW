@@ -51,23 +51,31 @@ def getLen(obj):
 def saveObjectForTesting(file_name,object):
 	import pickle
 	# Step 2
-	with open(file_name, 'wb') as file:
+	fullRoute=generateFullRouteTestFile(file_name)
+	with open(fullRoute, 'wb') as file:
 	  # Step 3
 	  pickle.dump(object, file)
+def generateFullRouteTestFile(file_name):
+	createTestFolderIfNotExist()
+	folder=getTestObjectsFolder()
+	return folder+"/"+file_name
 def saveDFObjectForTesting(file_name,object):
 	if object is None:
 		return
-	object.to_pickle(file_name)
+	fullRoute=generateFullRouteTestFile(file_name)
+	object.to_pickle(fullRoute)
 def readObjectForTesting(file_name):
 	# Step 1
 	import pickle
 	# Step 2
+	file_name=generateFullRouteTestFile(file_name)
 	with open(file_name, 'rb') as file:
 		# Step 3
 		object = pickle.load(file)
 		# After config_dictionary is read from file
 		return object
 def readDFObjectForTesting(file_name):
+	file_name=generateFullRouteTestFile(file_name)
 	unpickled_df = pd.read_pickle(file_name) 
 	return unpickled_df
 def readBasicConfigValuesJson():
@@ -96,3 +104,10 @@ def findingDuplicateItemsInList(list_):
 	duplicates = [item for item in list_ if list_.count(item) > 1]
 	unique_duplicates = list(set(duplicates))
 	return unique_duplicates
+def createTestFolderIfNotExist():
+	import os
+	test_folder=getTestObjectsFolder()
+	if not os.path.exists(test_folder):
+		os.mkdir(test_folder)
+def getTestObjectsFolder():
+	return './TestObjects'

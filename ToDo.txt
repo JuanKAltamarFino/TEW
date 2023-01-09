@@ -35,7 +35,7 @@ EN- Create a Class called Images to get all the images used to interact with the
 FIX- Remade the PreBooking logic for search match type because there each letter is like a scroll down.
 EN- Think in a way to reset the roster search before begin the check of the priority of wrestlers
 7- Generate the proportion of participant per divition for each tvShowsType (A,B) something like B(DarkCard:70,MidCard:25,MainCard:5) and A(DarkCard:33,MidCard:33,MainCard:34) or only have two divition for B an 3 for A DONE
-Fix Urgent - Discover if the TagTeams disappear in some way Read about pd.ExcelWriter to know in what moment close the file
+Fix Urgent - Discover if the TagTeams disappear in some way Read about pd.ExcelWriter to know in what moment close the file DONE
 8- Change the position of Roster Columns Name	Profile for RateOnPassive	RateOnActive and Gender with User
 9- FIX the participants of a match can't be repeated DONE
 10- Create the generator of angles based in your storylines

@@ -1,8 +1,19 @@
 from Utility import readDFObjectForTesting,debugging,readObjectForTesting
 from GenerateMatches import generateMatchesForShows
-from TEW_MDB import generateTagTeamsFirstTime
+from TEW_MDB import generateTagTeamsFirstTime,mergeTeams 
+from GenerateMatches import retrieveDFOnlyWrestlersNames
 import re
 def main():
+	db_teamsP=readDFObjectForTesting("db_teamsP")
+	print(db_teamsP.shape)
+	db_teamsAEW=readDFObjectForTesting("db_teamsAEW")
+	print(db_teamsAEW.shape)
+	print(db_teamsP.shape==db_teamsAEW.shape)
+	db_teamsP_nm=retrieveDFOnlyWrestlersNames(db_teamsP)
+	db_teamsAEW_nm=retrieveDFOnlyWrestlersNames(db_teamsAEW)
+	db_teamsP=mergeTeams(db_teamsP,db_teamsAEW)
+	print(db_teamsP.shape)
+def testGenerateTagTeamsFirstTime():
 	dict_wrestling=readObjectForTesting("dict_wrestling")
 	print(dict_wrestling)
 	db_wrestlersP=readDFObjectForTesting("db_wrestlersP")
