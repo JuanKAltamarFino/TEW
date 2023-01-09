@@ -426,5 +426,20 @@
 		  "MidCard":0.20,
 		  "MainCard":0.10
 	  }
+  },
+  "StorylinesPlayer":{
+	  "CompanyInitials":[],
+	  "StorylineUID":[],
+	  "WorkerUID":[],
+	  "WorkerName":[],
+	  "MajorRole":[],
+	  "AlignmentSide":[],
+	  "SegmentsCompleted":[],
+	  "WorkerPoints":[],
+	  "StorylineName":[],
+	  "Description":[],
+	  "Started":[],
+	  "Heat":[]
+	  }
   }
 }

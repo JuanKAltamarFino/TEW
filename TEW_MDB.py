@@ -13,7 +13,7 @@ from EnumTEW import MatchHistoryColumns
 from EnumTEW import TriosColumns
 from EnumTEW import RosterTypes
 from itertools import combinations
-from Utility import debugging,getLen,writeExcel,saveDFObjectForTesting,saveObjectForTesting
+from Utility import debugging,getLen,writeExcel,saveDFObjectForTesting,saveObjectForTesting,readBasicConfigValuesJson
 from SetUp import readRouteFolderIfExist
 pytesseract.pytesseract.tesseract_cmd = r"J:\Program Files\Tesseract-OCR\tesseract.exe"        
 c_key_whereMyWrestlersWorks='WhereWorkMyWrestlers'
@@ -49,7 +49,8 @@ def main():
 	dict_childcompany_wrestlers.update(generateChildCompanyWrestlers(cur))
 	dict_childcompany_wrestlers.update(generateChildCompanyWrestlersToFollow(cur))        
 	dict_childcompanies=generateChildCompanies(cur)
-	dict_childcompany_wrestlers.update(getWhereWorkMyWrestlers(cur))    	
+	dict_childcompany_wrestlers.update(getWhereWorkMyWrestlers(cur))
+	dict_storylines=generateStorylines(cur)
 	cur.close()
 	con.close()
 	#Begin of the program to ban wrestler for shows
@@ -759,6 +760,29 @@ def consultWhereWorkMyWrestlers(cur,df):
 def sortBy(db,sort_columns):
 	db=db.sort_values(by=sort_columns,ascending=False)
 	return db
+def generateStorylines(cur):
+	dict_storylines={}
+	v_columns=generateStorylinesColumns()
+	db=pd.DataFrame([],columns=v_columns)
+    db=consultStorylinesPlayer(cur,db).drop_duplicates()
+	db=sortBy(db,v_columns)
+	dict_storylines['StorylinesPlayer']=db
+	return dict_storylines
+def generateStorylinesColumns():
+	dict_basic_values=readBasicConfigValuesJson()
+	return list(dict_basic_values[STORY_LINES_PLAYER.value].keys())
+def consultStorylinesPlayer(cur,db):
+	SQL="""
+	SELECT c.Initials,PSI.StorylineUID,PSI.WorkerUID,
+		(SELECT ct.Name
+		FROM Contracts ct
+		Where ct.CompanyUID = c.UID and  PSI.WorkerUID= ct.WorkerUID) as WorkerName,
+		PSI.MajorRole,PSI.Alignment_Side,PSI.Segments_Completed,    
+		PSI.Current_Points,PS.StorylineName,ps.Description,ps.Started,ps.Heat
+	FROM Player_Storyline_Involved PSI, Player_Storylines ps, Companies c
+	WHERE ps.CompanyUID=c.UID
+	and ps.UID=PSI.StorylineUID;
+	"""
 def readWhereWorkMyWrestlersFromChildCompanyWrestlers():
 	try:
 		dict_=read_file('ChildCompanyWrestlers.xlsx') #Retorna un OrderedDict pero escribirlo en el excel se ve más complicado.

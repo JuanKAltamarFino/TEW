@@ -52,4 +52,7 @@ class RosterTypes(Enum):
 	SINGLE="Single"
 	TAG_TEAM="Tag"
 	TRIOS="Trios"
+	
+class BasicConfigValuesKeys(Enum):
+	STORY_LINES_PLAYER="StorylinesPlayer"
             
