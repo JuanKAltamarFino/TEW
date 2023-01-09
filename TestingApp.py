@@ -4,7 +4,7 @@ from TEW_MDB import generateTagTeamsFirstTime,mergeTeams,removeDuplicatesTagTeam
 import re
 def main():
 	#testMergeTeams()
-	
+	testGenerateMatchesForShows()
 	
 def testRemoveDuplicatesTagTeams():
 	db_teamsP=readDFObjectForTesting("db_teamsP")

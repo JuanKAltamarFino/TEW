@@ -307,6 +307,14 @@ def generateRosterAvaliableForTheWeek(dict_wrestlers):
 	df_single=df_single.loc[df_single.Active==1]
 	dict_wrestlers.update({"Single":df_single})
 	return dict_wrestlers
+def getGroupsByWrestlers(df_wrestlers,df_group):
+	list_w=retrieveDFOnlyWrestlersNames(df_group).columns
+	df_filtered=pd.DataFrame([],columns=df_group.columns)
+	for w in list_w:
+		if 'W' in w and 'WUID' not in w:
+			df_groupFound=df_group.loc[df_group[w].isin(df_wrestlers.get('WrestlerName'))]
+			df_filtered=pd.concat([df_filtered,df_groupFound], axis=0)
+	return df_filtered
 def removeGroupsByWrestlers(db_inactive_single,df_group):
 	#df.loc[:, df.columns.str.startswith('alp')]
 	list_w=df_group.loc[:,df_group.columns.str.startswith('W')].columns
@@ -474,7 +482,6 @@ def generateCantWrestlersByDivition(df_roster_divition,dict_wrestlers):
 		if df_type_roster is None:
 			continue
 		cant=getCantWrestlersByFilter(df_type_roster.loc[(df_type_roster["Gender"]==v_gender)|("All"==v_gender)],v_MinPopularity,v_MaxPopularity,v_Brand)
-		print(f"cant:{cant}\v_Type:{v_Type}\ndata:{data}")
 		df_roster_divition.loc[(df_roster_divition["Divition"]==v_divition)
 						   &(df_roster_divition["Type"]==v_Type)
 						   &(df_roster_divition["Brand"]==v_Brand)
@@ -609,11 +616,16 @@ def generateMatchesForShows(list_shows_preparar,df_participantsForMatchesShows,d
 				else:
 					df_single=db_wrestlers.get("Single")
 					df_single=generateRosterForDark(df_single)
-					df_wrestlersByType=removeGroupsByWrestlers(df_single,df_wrestlersByType)
+					df_wrestlersByType=getGroupsByWrestlers(df_single,df_wrestlersByType)
 			if len(df_wrestlersByType.values)==0:
 				continue
 			df_wrestlerstoFight=generateWrestlerToFight(df_wrestlersByType,str_type_match,df_min_max_,is_shuffle,dict_matches)
 			df_wrestlerselected=df_wrestlerstoFight.head(v_participants)
+			real_participants=len(df_wrestlerselected.values)
+			if real_participants<v_participants and real_participants>1:
+				str_type_match=v_type+str(real_participants)
+			elif real_participants<2:
+				continue
 			type_match=str_type_match
 			df_match=generateMatch(str_type_match,show,type_match,v_divition,df_wrestlerselected)
 			if df_match.empty==False:
