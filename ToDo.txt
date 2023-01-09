@@ -40,6 +40,7 @@ Fix Urgent - Discover if the TagTeams disappear in some way Read about pd.ExcelW
 9- FIX the participants of a match can't be repeated DONE
 10- Create the generator of angles based in your storylines
 10.1- Modify TEW_MDB to read the Storylines we will create a file with the result
+10.1.1- Define the select for Storilines in the game
 10.2- Modify TEW_MDB to update the file StoryLinesAndDevelopment and update Rating column with the heat value
 10.2.1- If we don't have data in that file we must have to generate the file with the consulted information
 10.3- Create GenerateAngles.py file
