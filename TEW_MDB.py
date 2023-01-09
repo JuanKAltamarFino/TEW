@@ -97,6 +97,7 @@ def main():
 	saveDFObjectForTesting("db_teamsP",db_teamsP)
 	saveDFObjectForTesting("db_teamsAEW",db_teamsAEW)
 	db_teamsP=mergeTeams(db_teamsP,db_teamsAEW)
+	db_teamsP=removeDuplicatesTagTeams(db_teamsP)
 	#db_teamsP=put_experience(db_teamsP,db_teamsAEW)
 	db_trios=generateTriosBasedOnStables(df_stables,db_wrestlersP)
 	dict_wrestling.update({"Tag":db_teamsP})
@@ -320,7 +321,6 @@ def generateTagTeamsFirstTime(dict_wrestling,db_wrestlers):
 	str_key="Tag"
 	df_teams=dict_wrestling.get(str_key)
 	if (getLen(df_wrestlers)<1)|(getLen(df_teams)<1):
-		debugging(f"getLen(df_wrestlers): {getLen(df_wrestlers)}\ngetLen(df_teams): {getLen(df_teams)}")
 		list_wrestlers=db_wrestlers['WrestlerName'].tolist()
 		df_teams=generateTagTeamsByWrestlers(list_wrestlers,df_teams.columns)
 	dict_wrestling.update({str_key:df_teams})
@@ -607,6 +607,8 @@ def mergeTeams(db_teamsP,db_teamsAEW):
 	dict_types={'Individuals':1,'Unit':2,'Permanent Unit':3}
 	for key in dict_types.keys():
 		df_copy.loc[df_copy['Team_Type']==key,['Type']]=dict_types.get(key)
+	import ast
+	df_copy['Active'] =df_copy['Active'].map(ast.literal_eval)#To avoid the dtype('O')
 	df_copy['UID_TEAM']=db_teamsAEW.agg(lambda x:""+str(x['Worker1'])+"_"+str(x['Worker2']), axis=1)
 	df_copy['Popularity']=0
 	df_copy['BestRating']=0
@@ -629,6 +631,14 @@ def mergeTeams(db_teamsP,db_teamsAEW):
 			df_found['Type']=data['Type']
 	#db_teamsP=pd.merge(df_copy,db_teamsP,on=list(v_columns),  how='outer')
 	return db_teamsP
+def removeDuplicatesTagTeams(df_tagTeams):
+	df_copy=df_tagTeams.copy()
+	for index,data in df_copy.iterrows():
+		df_found=df_tagTeams.loc[((df_tagTeams['W1']==data['W1'])&(df_tagTeams['W2']==data['W2']))|((df_tagTeams['W2']==data['W1'])&(df_tagTeams['W1']==data['W2']))]
+		len_found=getLen(df_found)
+		if len_found>1:
+			df_found=df_found.drop(index=df_found.head(len_found-1).index)
+	return df_tagTeams
 def put_experience(db_teamsP,db_teamsAEW):
 	db_teamsAEW.Worker1=db_teamsAEW.Worker1.astype(float)
 	db_teamsAEW.Worker2=db_teamsAEW.Worker2.astype(float)
