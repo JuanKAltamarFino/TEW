@@ -1,5 +1,3 @@
 log.txt
 *.pyc
-*.pyc
-*__pychache
-__pycache__/*
+__pycache__/
