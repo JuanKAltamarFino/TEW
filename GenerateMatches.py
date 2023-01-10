@@ -362,9 +362,10 @@ def generarListaDeShowsAGenerar(dict_parameters):
     #    return df_shows.drop(df_shows[df_shows.isin(df.Show)].index)
     return df_shows
 def getDFTvShowsActive(dict_parameters):
-    df_shows=dict_parameters.get("Shows")
-    df_shows=df_shows.loc[(df_shows['ShowType']=="TV")]
-    return df_shows
+	df_shows=dict_parameters.get("Shows")
+	df_shows=df_shows.loc[(df_shows['ShowType']=="TV")]
+	df_shows=df_shows.sort_values(by=['TVShowType'])
+	return df_shows
 def participantByMatchType(dfConfMatchType):
     import random
     dataFrame=pd.DataFrame([])
@@ -619,6 +620,7 @@ def generateMatchesForShows(list_shows_preparar,df_participantsForMatchesShows,d
 					df_wrestlersByType=getGroupsByWrestlers(df_single,df_wrestlersByType)
 			if len(df_wrestlersByType.values)==0:
 				continue
+			df_wrestlersByType=removeWrestlersThatCantParticipateInTheShow(show,obtainWeekOfGame(),df_wrestlersByType,str_type_match)
 			df_wrestlerstoFight=generateWrestlerToFight(df_wrestlersByType,str_type_match,df_min_max_,is_shuffle,dict_matches)
 			df_wrestlerselected=df_wrestlerstoFight.head(v_participants)
 			real_participants=len(df_wrestlerselected.values)
@@ -914,6 +916,7 @@ def removeWrestlersThatCantParticipateInTheShow(str_show,full_week,df_wrestlers,
 			df_wrestlers=df_wrestlers.drop(index=df_wFound.index)
 	return df_wrestlers
 def getDfWrestlersCantParticipate():
+	db_parameters=readParameters()
 	df_wCantParticipate=db_parameters.get('WCantParticipate')
 	return df_wCantParticipate
 def transformFullWeekInTheirParts(full_week):
