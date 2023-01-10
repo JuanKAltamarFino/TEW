@@ -402,7 +402,6 @@ def participantByMatchType(dfConfMatchType):
                     i=i-1
                 i=i+1
         if dataFrame.empty:
-            #print(f'empty: {d}')
             dataFrame=d
         else:
             dfConfMatchType['Match Type'][typeMatch]
@@ -775,7 +774,6 @@ def splitTextFromNumber(text):
     if match:
         items = match.groups()
     else:
-        print(f'text\t{text}')
         items =[text,1]
     return items[0],int(items[1])
 # def generateMatchesForShows(list_shows_preparar,df_cantMatByShow,df_cantPBMT):
@@ -907,13 +905,10 @@ def removeWrestlersThatCantParticipateInTheShow(str_show,full_week,df_wrestlers,
 	v_year,v_month,v_week=transformFullWeekInTheirParts(full_week)
 	df_wCantParticipate=getDfWrestlersCantParticipate()
 	df_wCantParticipate=df_wCantParticipate.loc[(df_wCantParticipate['Show']==str_show)&((df_wCantParticipate['Week']==v_week)|(df_wCantParticipate['Week']=='Every'))&((df_wCantParticipate['Month']==v_month)|(df_wCantParticipate['Month']=='Every'))]
-	if str_type_match=='Single':
-		df_wFound=df_wrestlers.loc[df_wrestlers['WrestlerName'].isin(df_wCantParticipate['WName'])]
+	lst_columns=retrieveDFOnlyWrestlersNames(df_wrestlers).columns
+	for w_column in lst_columns:
+		df_wFound=df_wrestlers.loc[df_wrestlers[w_column].isin(df_wCantParticipate['WName'])]
 		df_wrestlers=df_wrestlers.drop(index=df_wFound.index)
-	elif str_type_match=='Tag':
-		for w in ['W1','W2']:
-			df_wFound=df_wrestlers.loc[df_wrestlers[w].isin(df_wCantParticipate['WName']),['Tag Name']]
-			df_wrestlers=df_wrestlers.drop(index=df_wFound.index)
 	return df_wrestlers
 def getDfWrestlersCantParticipate():
 	db_parameters=readParameters()
@@ -977,10 +972,7 @@ def limpiarBaseDeCaraALuchasYaPactadas(db_wrestlers,str_type_match,dict_matches)
     if v_dic_k:
         for key in dict_matches.keys():
             df_matches=dict_matches[key]
-            #db_teamsP['W1'].isin(rowfind.get('WrestlerName')),['W1','Tag Name']
             df_matches=df_matches.loc[(df_matches['Week']==obtainWeekOfGame())]
-            #print(f'df:\n{df}')
-            #LimpiarLuchadoresYaPactados            
             db_wrestlers=deleteBookedWrestlers(df_matches,db_wrestlers,str_type_match)                                    
     else:
         print('Primera vez')
@@ -1000,7 +992,6 @@ def deleteBookedWrestlers(df_matches,db_wrestlers,str_type_match):
 			else:
 				try:
 					df_w=db_wrestlers.loc[db_wrestlers['WrestlerName'].isin(df_matches.get(col_name)),['WrestlerName']]
-					#print(f'df_w:\n{df_w}')
 					db_wrestlers=db_wrestlers.drop(index=df_w.index)
 				except:
 					debugging(f"{db_wrestlers}\n{str_type_match}")
